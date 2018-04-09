@@ -32,27 +32,33 @@
             list += "<th>번호</th><th>제목</th>";
             list += "</tr>";
 
-            
+            var bookid;
 
             for(var i = 0; i < number; i++){
-                var bookid = prompt("주문할 책의 번호를 입력해주세요.\n1. 자바스크립트\n2. HTML\n3. CSS\n("+ (i+1) + "/" + (number) + "번째)");
-                switch (bookid) {
-                    case '1':
-                        var bookname = book1;
+                while(true){
+                    bookid = prompt("주문할 책의 번호를 입력해주세요.\n1. 자바스크립트\n2. HTML\n3. CSS\n("+ (i+1) + "/" + (number) + "번째)");
+                    if(bookid > 0 && bookid <= 3){
+                        switch (bookid) {
+                            case '1':
+                                var bookname = book1;
+                                break;
+                            case '2':
+                                var bookname = book2;  
+                                break;
+                            case '3':
+                                var bookname = book3;
+                                break;
+                            default:
+                                break;
+                        }
+                        list += "<tr>";
+                        list += "<td>" + (i+1) + "</td><td>" + bookname + "</td>";
+                        list += "</tr>";
                         break;
-                    case '2':
-                        var bookname = book2;  
-                        break;
-                    case '3':
-                        var bookname = book3;
-                        break;
-                    default:
-                        break;
+                    } else {
+                        alert("1에서 3 사이의 수를 입력해주세요.");
+                    }
                 }
-                list += "<tr>";
-                list += "<td>" + (i+1) + "</td><td>" + bookname + "</td>";
-                list += "</tr>";
-                
             }
 
             list += "</tbody>";
