@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <title>test2</title>
+</head>
+<body>
+    <script>
+        var dayInput = prompt("비교할 날짜를 입력하세요", "2018-04-09");
+        var diffMills = new Date().getTime() - new Date(dayInput).getTime();
+        var diffDay = Math.abs(Math.floor(diffMills/1000/60/60/24));
+        alert("날짜 간격은 " + diffDay + "일 입니다.")
+    </script>
+</body>
+</html>

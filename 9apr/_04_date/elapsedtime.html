@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <title>걸린 시간</title>
+</head>
+<body>
+    <script>
+        var sum = 0;
+        var startTime = new Date().getTime();
+        for(var i = 0; i < 1000000; i++){
+            sum += i;
+        }
+        var endTime = new Date().getTime();
+        document.write("sum = " + sum + "<br>");
+        document.write("걸린 시간 : " + (endTime - startTime) + "ms");
+    </script>
+</body>
+</html>
