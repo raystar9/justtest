@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <title>묵시적 형변환</title>
+    <script>
+        document.write('1 < "2"? : ' + (1 < "2") + "<br>");
+        document.write('"2" < 1? : ' + ("2" < 1) + "<br>");
+
+        document.write('"A" > 1 : ' + ("A" > 1) + "<hr>");
+        // "A"를 비교연산할 시 65가 아닌 NaN이 되므로 false값이 반환된다.
+        document.write('1 == "2" : ' + (1 == "2") + "<br>");
+        document.write('2 == "2" : ' + (2 == "2") + "<hr>");
+        
+        document.write('1 === "2" : ' + (1 === "2") + "<br>");
+        document.write('2 === "2" : ' + (2 === "2") + "<br>");
+        document.write('"2" === "2" : ' + ("2" === "2") + "<br>");
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

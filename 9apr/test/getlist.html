@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        #book {text-align: center; width: 650px; margin-left: auto; margin-right: auto; font-size: 18px;}
+        #book caption {font-size: 30px; color: green;}
+        #book tr {height: 40px;}
+        #book tr>th {background-color: black; color: white;}
+        #book th:first-child {width: 20%,}
+        #book th:nth-child(2) {width: 80%}
+        #book tr:nth-child(2n) {background-color: green}
+        #book tr:nth-child(2n + 1) {background-color: white}
+        #book tr:hover {background-color: orange}
+        /*  */
+    </style>
+</head>
+<body>
+    <script>
+        var number = prompt("책의 갯수를 입력하세요");
+        var book1 = "자바스크립트";
+        var book2 = "HTML";
+        var book3 = "CSS";
+        
+        if(number > 0){
+            var list = '';
+            list += "<table border = 1 id='book'>";
+            list += "<caption>책 제목</caption>";
+            list += "<tbody>";
+
+            list += "<tr>";
+            list += "<th>번호</th><th>제목</th>";
+            list += "</tr>";
+
+            
+
+            for(var i = 0; i < number; i++){
+                var bookid = prompt("주문할 책의 번호를 입력해주세요.\n1. 자바스크립트\n2. HTML\n3. CSS\n("+ (i+1) + "/" + (number) + "번째)");
+                switch (bookid) {
+                    case '1':
+                        var bookname = book1;
+                        break;
+                    case '2':
+                        var bookname = book2;  
+                        break;
+                    case '3':
+                        var bookname = book3;
+                        break;
+                    default:
+                        break;
+                }
+                list += "<tr>";
+                list += "<td>" + (i+1) + "</td><td>" + bookname + "</td>";
+                list += "</tr>";
+            }
+
+            list += "</tbody>";
+            list += "</table>";
+            document.body.innerHTML += list;
+        } else {
+            document.write("올바른 수(>0)를 입력해주세요.");
+        }
+        
+    </script>
+</body>
+</html>

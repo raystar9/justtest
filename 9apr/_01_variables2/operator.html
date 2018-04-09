@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <title>묵시적 형변환</title>
+    <script>
+        var a = "3";
+        var b = 2;
+
+        var c = b + 5 + a;
+
+        var d = a + b + 1;
+        document.write("d = " + d + "<br>");
+        document.write('Number("3") + 2 + 1 = ' + (Number("3") + 2 + 1) + "<hr>");
+        var a = true;
+        document.write(" a + 1 = " + (a+1) + "<br>");
+        document.write(" false + 1 = " + (false + 1) + "<hr>");
+
+        document.write(" a + '10' = " (a + '10') + "<br>");
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
