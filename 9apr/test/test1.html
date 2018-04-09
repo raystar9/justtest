@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <title>문제 1</title>
+</head>
+<body>
+    <script>
+        var date1 = new Date();
+        var date2 = new Date();
+        date1.setDate(8);
+        date2.setDate(7);
+
+        dateformat(date1);
+        dateformat(date2);
+        function dateformat(date){
+            document.write("날짜 : " + date.getFullYear() + "년 " + (date.getMonth()+1) + "월 "+ date.getDate() + "일 ");
+            switch(date.getDay()) {
+                case 0 :
+                    document.write("<span style='color:red'>일요일</span>");
+                    break;
+                case 1 :
+                    document.write("월요일");
+                    break;
+                case 2 :
+                    document.write("화요일");
+                    break;
+                case 3 :
+                    document.write("수요일");
+                    break;
+                case 4 :
+                    document.write("목요일");
+                    break;
+                case 5 :
+                    document.write("금요일");
+                    break;
+                case 6 :
+                    document.write("<span style='color:blue'>토요일</span>");
+                    break;
+            }
+            document.write("<br>");
+            document.write("시간 : " + date.getHours() + "시 "+ date.getMinutes() + "분 " + date.getSeconds() + "초 <br><br>");
+        }
+        
+    </script>
+</body>
+</html>
