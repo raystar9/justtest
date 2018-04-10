@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var array1 = new Array();
+        document.write("var array1 = new Array();의 자료형은 " + typeof array1 + "<hr>");
+
+        document.write("array1 의 내용 : " + array1 + "<br>"
+            + " 배열 크기 : " + array1.length + "<hr>");
+
+        var array2 = new Array(5);
+        array2[0] = 1;
+        array2[3] = 10;
+        array2[4] = 11;
+        document.write("array2 의 내용 : " + array2 + "<br>"
+            + " 배열 크기 : " + array2.length + "<hr>");
+
+        var array3 = new Array(273, 103, 57, 32);
+        document.write("array3 의 내용 : " + array3 + "<br>"
+            + " 배열 크기 : " + array3.length + "<hr>");
+        
+        var array4 = [47, 273, 103, 52];
+        document.write("array4 의 내용 : " + array4 + "<br>"
+            + " 배열 크기 : " + array4.length + "<hr>");
+        
+        var array6 = [
+            1, '2', true, function(){alert('love6');}, {}, [1, 2]
+        ]
+        document.write("array6 의 내용 : " + array6 + "<br>"
+            + " 배열 크기 : " + array6.length + "<hr>");
+
+        document.write("array6[5] : " + array6[5] + "<br>");
+        document.write("array6[5][0] : " + array6[5][0] + "<br>");
+        document.write("array6[5][1] : " + array6[5][1] + "<br>");
+        array6[3]();
+    </script>
+</body>
+</html>

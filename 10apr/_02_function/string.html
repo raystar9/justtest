@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <title>string의 메서드</title>
+</head>
+<body>
+    <script>
+        var a = new String("Boys and Girls");
+        var b = '!!';
+        document.write('a : ' + a + '<br>');
+        document.write('b : ' + b + '<br>');
+        document.write('a.charAt(0) = ' + a.charAt(0) + '<br>');
+        document.write('a.concat(b,"입니다) = ' + a.concat(b, "입니다" + '<hr>'));
+        document.write('a의 문자 길이 :' + a.length + "<hr>");
+        document.write('a.indexOf("s") :' +a.indexOf("s") + "<br>");
+        document.write('a.lastIndexOf("s") :' + a.lastIndexOf("s") + '<br>');
+        document.write('a.indexOf("And") :' + a.indexOf("And") + "<br>");
+        document.write('a.indexOf("and") :' + a.indexOf('and') + '<br>');
+        var str = 'and';
+        var sub = a.substr(a.indexOf(str), str.length);
+        document.write(sub);
+
+        var c = a.split(' ');
+        document.write(c);
+    </script>
+</body>
+</html>

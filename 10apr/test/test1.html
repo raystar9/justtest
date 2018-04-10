@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <title>test1</title>
+</head>
+<body>
+    <script>
+        var idnum = prompt('주민번호를 입력하세요', '010101-4231111');
+        var gender = idnum.substr(7, 1)
+        if(gender == '1' || gender == '3'){
+            document.write("남성입니다.");
+            document.body.style.backgroundColor = 'navy';
+            document.body.style.color='white';
+        }
+        if(gender == '2' || gender == '4') {
+            document.write("여성입니다.");
+            document.body.style.backgroundColor = 'pink';
+        }
+    </script>
+</body>
+</html>

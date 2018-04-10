@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <title>함수</title>
+    <script>
+        function print_array(array, name){
+            document.write("size of array : " + array.length + "<br>");
+            
+            for(i = 0; i < array.length; i++){
+                document.write(name + "[" + i + "] : ");
+                if(typeof array[i] == 'string'){
+                    document.write('"' + array[i] + '"');
+                } else if(typeof array[i] == 'number'){
+                    document.write(array[i]);
+                }
+                document.write("<br>");
+            }
+            document.write("<hr>");
+        }
+    </script>
+</head>
+<body>
+    <script>
+        var arr = new Array("zero", "1", 2, "three");
+        document.write("Forward array <br>");
+        print_array(arr, 'arr');
+
+        arr.reverse();
+        document.write("Reverse array <br>");
+        print_array(arr, 'arr');
+
+        var str = arr.join("!! ");
+        document.write("After join : <br>");
+        document.write('str : "' + str + '" <hr>');
+
+        var sliced_arr = arr.slice(2, 3);
+        document.write("After slice : <br>");
+        print_array(arr, "arr");
+        print_array(sliced_arr, "sliced_arr");
+
+        var new_arr = arr.concat(4, "five", 6);
+        document.write("After concat : <br>");
+        print_array(arr, "arr");
+        print_array(new_arr, "new_arr");
+
+        var arr2 = new Array(6,4,2,3,5);
+        arr2.sort();
+        document.write("After sort : <br>");
+        document.write(arr2 + "<br>");
+        print_array(arr2, 'arr2');
+    </script>
+</body>
+</html>
