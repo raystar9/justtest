@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <title>callback</title>
+</head>
+<body>
+    <script>
+        function callbackfunc(callback) {
+            for(i = 0; i < 3; i++){
+                callback(i);
+            }
+        }
+
+        callbackfunc(function(i) {
+            alert(i);
+        });
+    </script>
+</body>
+</html>

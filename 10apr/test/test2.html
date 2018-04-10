@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <title>timer</title>
+</head>
+<body>
+    <script>
+        var timer = setInterval(function() {
+            var date = new Date();
+            document.body.innerHTML = (date.toLocaleDateString() + date.toLocaleTimeString() + "<br>");
+        }, 1000);
+        setTimeout(function() {
+            clearInterval(timer);
+            alert('10초가 지났습니다.')
+        }, 10000);
+    </script>
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <title>returnFunction</title>
+</head>
+<body>
+    <script>
+        // function returnFunction() {
+        //     return function() {
+        //         alert('hello, function!');
+        //     }
+        // }
+        // returnFunction()();
+        
+        (function(){
+            return function(){
+                alert('hello, function immediate!')
+            }
+        })()();
+    </script>
+</body>
+</html>

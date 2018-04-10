@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <title>timer</title>
+</head>
+<body>
+    <script>
+        setInterval(() => {
+            var date = new Date();
+            document.body.innerHTML = (date.toLocaleDateString() + date.toLocaleTimeString() + "<br>");
+            document.write(date.getMilliseconds() + "<br>");
+        }, 1000);
+    </script>
+</body>
+</html>
