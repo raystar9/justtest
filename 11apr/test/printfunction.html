@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <title>연습문제</title>
+</head>
+<body>
+    <script>
+        var human = {
+            name : "구명회",
+            age : 29,
+            height : 184,
+            bloodType : 'O',
+            address : "경기도 남양주시"
+        }
+        human.print = function print() {
+            for(var p in this){
+                if(typeof this[p] != "function"){
+                    document.write(p + " = " +this[p] + "<br>");
+                }
+            }
+        }
+
+        human.print();
+    </script>
+</body>
+</html>
