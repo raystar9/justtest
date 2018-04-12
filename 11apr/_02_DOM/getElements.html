@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <title>객체 가져오기</title>
+    <script>
+        window.onload = function(){
+            var headers = document.getElementsByTagName("h1");
+
+            for(let i = 0; i < headers.length; i++){
+                headers[i].onclick = function(){
+                    headers[i].innerHTML = "hi";
+                }
+            }
+        }
+        window.onclick = function(){
+            var textInputs = document.getElementsByName('age');
+            textInputs[0].value = "29살입니다."
+        }
+    </script>
+</head>
+<body>
+    <h1 id="header-1">클릭하면 변경됩니다.</h1>
+    <h1 id="header-2">클릭하면 변경됩니다.</h1>
+    <input type="text" name='age'>
+    <input type="text" name='age'>
+</body>
+</html>

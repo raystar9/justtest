@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <title>onClick</title>
+    <script>
+        window.onload = function(){
+            var header1 = document.getElementById("header-1");
+            var header2 = document.getElementById("header-2");
+
+            header1.onclick = function(){
+                header1.innerHTML = "with getElementById() : 졸려요";
+            }
+            header2.onclick = function(){
+                header2.innerHTML = "with getElementById() : 저도요";
+            }
+        }
+    </script>
+</head>
+<body>
+    <h1 id="header-1">클릭해보세요</h1>
+    <h1 id="header-2">클릭해보세요</h1>
+</body>
+</html>
