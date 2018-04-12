@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <title>윈도우 열기</title>
+</head>
+<body>
+    <script>
+        var wwidth = screen.width;
+        var wheight = screen.height;
+        var child = window.open('../_01_objectControl/delete.html', "_blank", 'height=300, width = 300');
+
+        child.moveTo(0, 0);
+        child.resizeTo(wwidth - 100, wheight - 100);
+        document.write("hi");
+        setInterval(function(){
+            child.resizeBy(-150, -150);
+            child.moveBy(150, 150);
+        }, 1000);
+    </script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <title>이벤트처리</title>
+    <script>
+        add = function(){
+            var res = 0;
+            res = Number(document.getElementById('op1').value) + Number(document.getElementById('op2').value);
+            document.getElementById('result').value = res;
+        }
+    </script>
+    <style>
+        form {padding-top: 100px; text-align: center;}
+        #op1, #op2, #result {width: 40px; height: 40px; font-size: 35pt; text-align: center;}
+        #result {}
+    </style>
+</head>
+<body>
+    <form>
+        <input type="text" name="" id="op1"> + 
+        <input type="text" name="" id="op2">
+        <input type="button" value="=" onclick="add();">
+        <input type="text" name="" id="result" readonly>
+    </form>
+</body>
+</html>

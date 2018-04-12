@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <title>웹사이트 접속하기</title>
+    <script>
+        window.onload = function(){
+            var site = document.getElementById('site');
+            
+            site.onchange = function(){
+                location.href = site.value;
+            }
+        }
+    </script>
+</head>
+<body>
+    <h1>사이트에 접속하기.</h1>
+    <hr>
+    사이트 선택
+    <select id="site" on?="load()">
+        <option value="http://www.naver.com">네이버</option>
+        <option value="http://www.google.com">구글</option>
+        <option value="http://daum.net">다음</option>
+    </select>
+</body>
+</html>

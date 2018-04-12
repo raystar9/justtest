@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>서적주문</title>
+    <script>
+        var bookList = [{
+            name : "4차 산업",
+            price : 25000,
+        },{
+            name : "다이어트",
+            price : 27000,
+        },{
+            name : "윤식당",
+            price : 25000,
+        }];
+
+        window.onload = function(){
+            var table = document.getElementById("order-format");
+            var cols = table.getElementsByTagName("tr");
+            var tbody = document.getElementsByTagName('tbody')[0];
+            
+            //여기부터 bookList 객체로부터 값들을 받아와 컬럼들을 생성하는 알고리즘임.
+            for(i = 0; i < (bookList.length); i++){
+                var newRow = tbody.insertRow(i+1);
+                newRow.insertCell().innerHTML = bookList[i].name;
+                newRow.insertCell().innerHTML = bookList[i].price + "원";
+                //bookList에서 이름과 가격을 받아와 0번과 1번컬럼에 넣음.
+
+                var newQuantity = document.createElement("input");
+                newQuantity.className='quantity';
+                newQuantity.onchange = calcSum;
+                newRow.insertCell().appendChild(newQuantity);
+                //class가 quantity인 input인 태그를 2번컬럼에 넣음. 내용 변경시 합 계산 이벤트도 넣음.
+
+                var newTotalPrice = document.createElement("input");
+                newTotalPrice.className = 'totalPrice';
+                newRow.insertCell().appendChild(newTotalPrice);
+                //class가 totalPrice인 input태그를 3번컬럼에 넣음.
+            }
+            
+        }
+        
+        function calcSum() {
+            var quantities = document.getElementsByClassName("quantity");
+            var totalPrices = document.getElementsByClassName("totalPrice");
+            var sumQuantity = 0;
+            var sumPrice = 0;
+            for(i = 0; i < (quantities.length - 1); i++){
+                quantity = quantities[i].value;
+                sumQuantity += Number(quantity);
+                //갯수의 합을 구함
+
+                var price = quantity * bookList[i].price;
+                //각 책별 총 가격을 구함
+
+                totalPrices[i].value = price;
+                //구한 가격을 테이블에 넣음
+
+                sumPrice += price;
+            }
+            quantities[quantities.length-1].value = sumQuantity;
+            //갯수의 마지막 열의 값에 합을 넣음
+            totalPrices[totalPrices.length-1].value = sumPrice;
+            //가격의 마지막 열에 가격합을 넣음
+        }
+
+
+    </script>
+    <style>
+        form {width: 800px; margin: auto;}
+        #order-format {width:inherit; text-align: center; font-size: 16pt;}
+        #order-format tr{height: 50px;}
+        #order-format th:nth-child(3){width: 60px;}
+        #order-format th:nth-child(4){width: 300px;}
+        input.quantity {font-size: inherit; width: 50px;}
+        input.totalPrice {font-size: inherit; width: 280px;}
+    </style>
+</head>
+<body>
+    <form action="" name="form01">
+        <table border="1" id="order-format">
+            <caption>서적 주문 양식</caption>
+            <tbody>
+                <tr>
+                    <th>책 제목</th>
+                    <th>가격</th>
+                    <th>수량</th>
+                    <th>합계</th>
+                </tr>
+                <!-- <tr>
+                    <td></td>
+                    <td></td>
+                    <td><input type="number" class="quantity" value="0" min="0" onchange="calcSum()"></td>
+                    <td><input type="number" class="totalPrice" readonly></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td><input type="number" class="quantity" value="0" min="0" onchange="calcSum()"></td>
+                    <td><input type="number" class="totalPrice" readonly></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td><input type="number" class="quantity" value="0" min="0" onchange="calcSum()"></td>
+                    <td><input type="number" class="totalPrice" readonly></td>
+                </tr> -->
+                <tr>
+                    <td>합계</td>
+                    <td></td>
+                    <td><input type="number" class="quantity" readonly></td>
+                    <td><input type="number" class="totalPrice" readonly></td>
+                </tr>
+            </tbody>
+        </table>
+        <!-- <input type="button" value="합계계산" onclick="calcSum();"> -->
+        <input type="reset" value="초기화">
+        <input type="submit" value="제출">
+    </form>
+</body>
+</html>
