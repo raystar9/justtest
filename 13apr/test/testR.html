@@ -25,12 +25,69 @@
         var in_hobby3 = document.getElementById("hobby3");
         var in_hobby4 = document.getElementById("hobby4");
         var in_hobby5 = document.getElementById("hobby5");
+        var hobbyCount = in_hobby1.checked + in_hobby2.checked + in_hobby3.checked + in_hobby4.checked +in_hobby5.checked;
+        var in_post1 = document.getElementById("post1");
+        var in_post2 = document.getElementById("post2");
+
+        console.log();
         
-        
-        if(in_id){
+        if(in_id.value == ""){
             alert("아이디를 입력하지 않았습니다.");
-        } else if()
-        return false;
+            in_id.focus();
+            return false;
+        } else if(in_pw.value == ""){
+            alert("비밀번호를 입력하지 않았습니다.")
+            in_pw.focus();
+            return false;
+        } else if(in_jumin1.value.length < 6 || in_jumin2.value.length < 7){
+            alert("주민번호를 제대로 입력하지 않았습니다.")
+            in_jumin1.focus();
+            return false;
+        } else if(in_email.value == "" || in_domain.value == ""){
+            alert("이메일을 입력하지 않았습니다.")
+            in_email.focus()
+            return false;
+        } else if(in_email.value == ""){
+            alert("이메일을 입력하지 않았습니다.")
+            in_email.focus();
+            return false;
+        } else if(!in_gender1.checked && !in_gender2.checked){
+            alert("성별이 선택되지 않았습니다.")
+            in_gender1.focus();
+            return false;
+        } else if(hobbyCount < 2){
+            alert("2개 이상의 취미를 선택해주세요.")
+            in_hobby1.focus();
+            return false;
+        } else if(in_post1.value.length < 3 || in_post2.value.length < 3){
+            alert("우편번호가 입력되지 않았습니다.")
+            in_post1.focus();
+            return false;
+        } else if(in_address == ""){
+            alert("주소를 입력하지 않았습니다.")
+            in_address.focus();
+            return false;
+        }
+    }
+
+    function idCheck(){
+        var in_id = document.getElementById("id");
+        if(in_id.value == ""){
+            alert("ID를 입력해주세요");
+            in_id.focus();
+        } else {
+            window.open("", "_blank", "width=300, height=250");
+        }
+    }
+
+    function move(){
+        if(document.getElementById("jumin1").value.length == 6){
+            document.getElementById("jumin2").focus();
+        }
+    }
+
+    function domain1(e){
+        document.getElementById("domain").value = e.target.value;
     }
 </script>
 <body>
@@ -38,11 +95,11 @@
         <legend>hi</legend>
         <form action="send.jsp" id="myForm" onsubmit="return check()">
             <table border="1">
-                <tr><td><label>ID</label></td><td><input type="text" name="id" id="id"><input type="button" value="ID중복검사" onclick="idcheck()"></td></tr>
+                <tr><td><label>ID</label></td><td><input type="text" name="id" id="id"><input type="button" value="ID중복검사" onclick="idCheck()"></td></tr>
                 <tr><td><label>비밀번호</label></td><td><input type="password" name="pass" id="pass"></td></tr>
                 <tr><td>
                     <label for="jumin1">주민등록번호</label></td><td>
-                    <input type="text" name="jumin1" id="jumin1" maxlength="6">
+                    <input type="text" name="jumin1" id="jumin1" maxlength="6" oninput="move()">
                     <input type="password" name="jumin2" id="jumin2" maxlength="7">
                 </td></tr>
                 <tr>
@@ -50,7 +107,7 @@
                     <td>
                     <input type="text" name="email" id="email">
                     <input type="text" name="domain" id="domain">
-                    <select name="sel" id="sel" onselect="domain1()">
+                    <select name="sel" id="sel" onchange="domain1(event)">
                         <option value="">직접입력</option>
                         <option value="naver.com">naver.com</option>
                         <option value="daum.net">daum.net</option>
