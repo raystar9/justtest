@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <title>연습문제</title>
+    <style>
+        #booktable {width : 500px; margin: auto; border-collapse: collapse; text-align: center;}
+        #booktable caption {color: green; font-size: 50px; font-weight: 700;}
+        #booktable th {background-color: violet}
+    </style>
+</head>
+<body>
+    <script>
+        var human = {
+            name : "구명회",
+            age : 29,
+            height : 184,
+            bloodType : 'O',
+            address : "경기도 남양주시"
+        }
+        human.add = function() {
+            var counter = 0;
+
+            return function increseCounter() {
+                return counter++;
+            };
+        }();
+
+        human.print = function() {
+            document.write(
+                        '<table border="1" id="booktable">' +
+                        '<caption>신상 정보</caption>' +
+                        '<tbody>' +
+                            '<tr>' +
+                                '<th>항목 (속성: property)</th>' +
+                                '<th>내용 (값: value)</th>' +
+                            '</tr>');
+            for(var p in this){
+                if(typeof(this[p]) != "function" && p != 'name'){
+                    document.write('<tr>');
+                    
+                    var formContent = '';
+                    switch (p) {
+                        case "age":
+                            formContent = this[p] + '세';
+                            break;
+                        case "height":
+                            formContent = this[p] + 'cm';
+                            break;
+                        case "bloodType":
+                            formContent = this[p] + '형';
+                            break;
+                        default:
+                            formContent = this[p];
+                            break;
+                    }
+                    document.write('<td>human.' + p + '</td>' + '<td>' + formContent + '</td>');
+                    document.write('</tr>');
+                }
+            }
+            document.write(
+                            '</tbody>' +
+                        '</table>'
+            );
+        }
+        human.printName = function() {
+            document.write('<tr>');
+            document.write('<td>이름</td>'+'<td>'+this.name+'</td>');
+            document.write('</tr>');
+        }
+
+        human.print();
+        
+        var result = human.add();
+        document.write(result + '<br>');
+        var result = human.add();
+        document.write(result + '<br>');
+        var result = human.add();
+        document.write(result + '<br>');
+        var result = human.add();
+        document.write(result + '<br>');
+        
+    </script>
+</body>
+</html>

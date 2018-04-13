@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <title>윈도우 열기</title>
+</head>
+<body>
+    <script>
+        function openWindow(){
+            var url = prompt("주소를 입력해주세요.", "http://www.naver.com");
+            if(url){
+                win = window.open(url);
+            }
+        }
+    </script>
+
+    <button onclick="openWindow();">새로운 창을 엽니다.</button>
+    <button onclick="win.close();">연 창을 닫습니다.</button>
+</body>
+</html>

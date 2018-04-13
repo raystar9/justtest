@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <title>onClick</title>
+    <script>
+        window.onclick = function(){
+            var isRun = false;
+            return function(){
+                if(!isRun){
+                    var image1 = document.createElement('img');
+                    var image2 = document.createElement('img');
+                    image1.src = "../mountain.jpg";
+                    image2.src = "../koala.jpg";
+
+                    document.body.appendChild(image1);
+                    document.body.appendChild(image2);
+                }
+                isRun = true;
+            }
+        }();
+    </script>
+    <style>
+        img {width : 300px; height: 300px;}
+    </style>
+</head>
+<body>
+</body>
+</html>

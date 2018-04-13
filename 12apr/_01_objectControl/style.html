@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <title>스타일조작</title>
+    <style>
+        #after{
+            border : 2px solid black;
+            color : orange;
+            font-family: helvetica;
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+    <h1 id='header'>Header</h1>
+</body>
+<script>
+    var h = document.getElementById('header');
+    function change() {
+        h.setAttribute('id', 'after');
+    }
+    h.onclick = change;
+</script>
+</html>

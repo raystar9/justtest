@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <title>book</title>
+    <style>
+        #booktable {width : 500px; margin: auto; border-collapse: collapse;}
+        #booktable caption {color: green; font-size: 50px; font-weight: 700;}
+        #booktable th {background-color: violet}
+    </style>
+</head>
+<body>
+    
+        </tbody>
+    </table>
+    <script>
+        var book = {
+            title : "채식주의자",
+            publisher : "창비",
+            author : "한강",
+            price : 25000,
+            info : {
+                pages : 442,
+                date : "2010년 1월 30일",
+                ISBN10 : 897056470,
+                size : "188mm*254mm"
+            }
+        }
+
+        document.write(
+        '<table border="1" id="booktable">' +
+            '<caption>서적 정보</caption>' +
+            '<tbody>' +
+                '<tr>' +
+                    '<th>항목 (속성: property)</th>' +
+                    '<th>내용 (값: value)</th>' +
+                '</tr>');
+        for(var p in book) {
+            if(typeof book[p] == "object") {
+                for(var ip in book[p]) {
+                    document.write(
+                '<tr>' + 
+                    '<td>book.'+ p + '.' + ip + '</td>' +
+                    '<td>' + book[p][ip] + '</td>' +
+                '</tr>');
+                }
+            } else {
+                document.write(
+                '<tr>' +
+                    '<td>book.' + p + '</td>');
+                switch(p) {
+                    case "price" : 
+                        document.write('<td>' + book[p] + '원</td>');
+                        break;
+                    default : 
+                        document.write('<td>' + book[p] + '</td>');
+                        break;
+                }
+                document.write(
+                '</tr>');
+            }
+        }
+        document.write(
+            '</tbody>' +
+        '</table>');
+    </script>
+</body>
+</html>

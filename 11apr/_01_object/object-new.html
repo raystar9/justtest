@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <title>객체</title>
+</head>
+<body>
+    <script>
+        var human = new Object();
+        human.name = "구명회";
+        human.age = 29;
+        human.height = 184;
+        human.bloodType = 'O';
+        human.address = "경기도 남양주시";
+
+        document.write(human.name + "<br>");
+        document.write(human.age + "<br>");
+        document.write(human.height + "<br>");
+        document.write(human.bloodType + "<br>");
+        document.write(human.address + "<br><hr>");
+
+        document.write(human["name"] + "<br>");
+        document.write(human["age"] + "<br>");
+        document.write(human["height"] + "<br>");
+        document.write(human["bloodType"] + "<br>");
+        document.write(human["address"] + "<br><hr>");
+
+        for(var p in human) {
+            document.write(p + " : " + human[p] + "<br>");
+        }
+        document.write("<hr>");
+        delete human.address;
+        for(var p in human) {
+            document.write(p + " : " + human[p] + "<br>");
+        }
+        document.write("<hr>");
+    </script>
+</body>
+</html>

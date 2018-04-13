@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>회원 가입</title>
+    <style>
+        fieldset {width:500px; margin: auto; padding-left:50px;}
+        label {width: 350px;}
+    </style>
+    <script>
+        function whenSubmit(){
+            var form1 = document.getElementById("form1");
+            if(form1.name.value == ""){
+                alert("이름을 입력해야 합니다.");
+                return false;
+            }
+            if(form1.password.value == "") {
+                alert("비밀번호를 입력해야 합니다.");
+                return false;
+            }
+            if(form1.password.value != form1.passwordCheck.value){
+                alert("비밀번호가 일치하지 않습니다.");
+                return false;
+            }
+        }
+    </script>
+</head>
+<body>
+    <fieldset>
+        <legend>회원가입 폼</legend>
+        <form id = "form1" action="orderBook.html" onsubmit="return whenSubmit()">
+            <label for="name">이름</label>
+            <input type="text" name="name" id="name"><br>
+            <label for="password">비밀번호</label>
+            <input type="password" name="password" id="password"><br>
+            <label for="passwordCheck">비밀번호 확인</label>
+            <input type="password" name="passwordCheck" id="passwordCheck"><br>
+            <input type="submit" value="제출">
+        </form>
+    </fieldset>
+</body>
+</html>
