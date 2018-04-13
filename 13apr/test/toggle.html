@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title> toggleImage </title>
+<style>
+    button {width:70px; height:25px; margin:10px 0 }
+</style>
+
+</head>
+<body>
+
+<div id="outerBox" style="background: blue; 
+                          width: 550px; height:300px;" >
+
+<div id="innerBox"
+     style="background: yellow; width: 450px; height:200px;
+            position: absolute; left: 50px; top: 50px;">
+
+    <img id="img1" src="../../image1.png" width="100px"
+         style="position: absolute; left: 50px; top: 45px; 
+         visibility: visible;">
+
+    <img id="img2" src="../../image2.png" width="100px"
+         style="position: absolute; left: 175px; top: 45px; 
+         visibility: visible;">
+
+    <img id="img3" src="../../image3.png" width="100px"
+         style="position: absolute; left: 300px; top: 45px; 
+         visibility: visible;">
+</div>
+
+</div>
+<script>
+    onload = function(){
+        var buttons = document.querySelectorAll('input[type="button"]')
+        for(let i = 0; i < buttons.length; i++){
+            buttons[i].addEventListener("click", function(){
+                if(document.getElementById("img"+(i+1)).style.visibility == 'visible'){
+                    document.getElementById("img"+(i+1)).style.visibility = 'hidden';
+                } else {
+                    document.getElementById("img"+(i+1)).style.visibility = 'visible';
+                }
+            })
+        }
+    }
+</script>
+
+Toggle Visibility : 
+<input type="button" value="Image 1">
+<input type="button" value="Image 2">
+<input type="button" value="Image 3">
+
+</body>
+</html>

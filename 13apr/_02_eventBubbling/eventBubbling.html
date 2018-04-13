@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>버블링</title>
+    <script>
+        window.onload = function(){
+            var items = document.querySelectorAll('.item');
+            function something(e) {
+                e.stopPropagation();
+                var id = "객체의 id : " + e.currentTarget.id;
+                alert(id);
+                
+            }
+            for(var i = 0; i < items.length; i++){
+                var ev = items[i];
+                ev.addEventListener('click', something, false);
+            }
+        }
+    </script>
+    <style>
+        #ext_div {border: 3px solid red;}
+        #in_div {border: 3px solid orange;}
+        #h1_1 {border: 3px solid yellow;height: 70px; padding: auto; margin:auto;}
+        #p_1 {border: 3px solid green; height: 50px;padding: auto; margin:auto;}
+        
+    </style>
+</head>
+<body>
+    <div class="item" id="ext_div">
+        <div class="item" id="in_div">
+            <h1 class="item" id="h1_1">
+                <p class="item" id="p_1">Paragraph</p>
+            </h1>
+        </div>
+    </div>
+</body>
+</html>

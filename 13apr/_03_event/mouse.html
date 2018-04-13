@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>마우스 관련 이벤트</title>
+    <script>
+        var width = 1;
+        function down() {
+            this.style.fontStyle = 'italic';
+            this.style.color = 'red';
+        }
+        function up() {
+            this.style.fontStyle = 'normal';
+            this.style.color = 'initial';
+        }
+        function over() {
+            this.style.borderColor = 'purple';
+        }
+        function out() {
+            this.style.borderColor = 'initial';
+        }
+        function wheel() {
+            if(event.wheelDelta < 0){
+                width--;
+            } else {
+                width++;
+            }
+            this.style.borderStyle = 'ridge';
+            this.style.borderWidth = width + 'px';
+        }
+        window.onload = function(){
+            var div_1 = document.querySelector('div');
+            var span_1 = document.querySelector('span');
+
+            span_1.addEventListener('mousedown', down, false);
+            span_1.addEventListener('mouseup', up, false);
+            span_1.addEventListener('mouseover', over, false);
+            span_1.addEventListener('mouseout', out, false);
+            span_1.addEventListener('wheel', wheel, false);
+        }
+    </script>
+    <style>
+        span{color: orange;}
+    </style>
+</head>
+<body>
+    <div>마우스 관련<span>이벤트</span>가 발생합니다.</div>
+</body>
+</html>

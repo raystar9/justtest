@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>과제</title>
+</head>
+<style>
+    fieldset {width: 800px; margin: auto}
+    #myForm table{margin: auto}
+    #myForm tr{height: 50px;}
+    /*  */
+</style>
+<script>
+    function check() {
+        var in_id = document.getElementById("id");
+        var in_pw = document.getElementById("pass");
+        var in_jumin1 = document.getElementById("jumin1");
+        var in_jumin2 = document.getElementById("jumin2");
+        var in_email = document.getElementById("email");
+        var in_domain = document.getElementById("domain");
+        var in_gender1 = document.getElementById("gender1");
+        var in_gender2 = document.getElementById("gender2");
+        var in_hobby1 = document.getElementById("hobby1");
+        var in_hobby2 = document.getElementById("hobby2");
+        var in_hobby3 = document.getElementById("hobby3");
+        var in_hobby4 = document.getElementById("hobby4");
+        var in_hobby5 = document.getElementById("hobby5");
+        
+        
+        if(in_id){
+            alert("아이디를 입력하지 않았습니다.");
+        } else if()
+        return false;
+    }
+</script>
+<body>
+    <fieldset>
+        <legend>hi</legend>
+        <form action="send.jsp" id="myForm" onsubmit="return check()">
+            <table border="1">
+                <tr><td><label>ID</label></td><td><input type="text" name="id" id="id"><input type="button" value="ID중복검사" onclick="idcheck()"></td></tr>
+                <tr><td><label>비밀번호</label></td><td><input type="password" name="pass" id="pass"></td></tr>
+                <tr><td>
+                    <label for="jumin1">주민등록번호</label></td><td>
+                    <input type="text" name="jumin1" id="jumin1" maxlength="6">
+                    <input type="password" name="jumin2" id="jumin2" maxlength="7">
+                </td></tr>
+                <tr>
+                    <td><label for="email">E-Mail</label></td>
+                    <td>
+                    <input type="text" name="email" id="email">
+                    <input type="text" name="domain" id="domain">
+                    <select name="sel" id="sel" onselect="domain1()">
+                        <option value="">직접입력</option>
+                        <option value="naver.com">naver.com</option>
+                        <option value="daum.net">daum.net</option>
+                        <option value="nate.com">nate.com</option>
+                        <option value="gmail.com">gmail.com</option>
+                    </select>
+                    </td>
+                </tr>
+                <tr><td><label for="male">성별</label></td>
+                    <td>
+                    <input type="radio" name="gender" id="gender1" value="m">남성
+                    <input type="radio" name="gender" id="gender2" value="f">여성
+                    </td>
+                </tr>
+                <tr><td><label for="">취미</label></td>
+                    <td>
+                    <input type="checkbox" name="hobby" id="hobby1" value="공부">
+                    <input type="checkbox" name="hobby" id="hobby2" value="게임">
+                    <input type="checkbox" name="hobby" id="hobby3" value="운동">
+                    <input type="checkbox" name="hobby" id="hobby4" value="등산">
+                    <input type="checkbox" name="hobby" id="hobby5" value="낚시">
+                    </td>
+                </tr>
+                <tr><td>
+                    <label for="">우편번호</label></td>
+                    <td>
+                    <input type="text" name="post1" id="post1" maxlength="3">
+                    <input type="text" name="post2" id="post2" maxlength="3">
+                    <input type="button" value="검색" onclick="post()">
+                    </td>
+                </tr>
+                <tr><td><label for="">주소</label></td><td><input type="text" name="address" id="address"></td></tr>
+                <tr><td colspan="2"><label>자기소개</label><br><textarea name="" id="" cols="30" rows="10"></textarea></td></tr>
+                <tr><td colspan="2"><input type="submit" value="회원가입"><input type="reset" value="취소"></td></tr>
+            </table>
+        </form>
+    </fieldset>
+</body>
+</html>
