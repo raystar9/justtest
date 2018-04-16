@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>선택자2</title>
+    <script src="../../lib/jquery-3.3.1.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            alert($("input:text").val())
+            $("input:text").val("Hello, world!");
+            $("input:text").css("color", "red");
+            $("input:password").css("color", "green");
+            $("input:file").css("background-color", "pink");
+        })
+    </script>
+</head>
+<body>
+    <input type="text" name="" id="" value="저요?">
+    <input type="password" name="" id="">
+    <input type="radio" name="" id="">
+    <input type="checkbox" name="" id="">
+    <input type="file" name="" id="">
+</body>
+</html>

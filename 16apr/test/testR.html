@@ -27,107 +27,86 @@
     #myForm input[type="submit"] {width:150px; margin-right: 50px;}
     /*  */
 </style>
+<script src="../../lib/jquery-3.3.1.min.js"></script>
 <script>
     function check() {
-        var in_id = document.getElementById("id");
-        var in_pw = document.getElementById("pass");
-        var in_jumin1 = document.getElementById("jumin1");
-        var in_jumin2 = document.getElementById("jumin2");
-        var in_email = document.getElementById("email");
-        var in_domain = document.getElementById("domain");
-        var in_gender1 = document.getElementById("gender1");
-        var in_gender2 = document.getElementById("gender2");
-        var in_hobby1 = document.getElementById("hobby1");
-        var in_hobby2 = document.getElementById("hobby2");
-        var in_hobby3 = document.getElementById("hobby3");
-        var in_hobby4 = document.getElementById("hobby4");
-        var in_hobby5 = document.getElementById("hobby5");
-        var hobbyCount = in_hobby1.checked + in_hobby2.checked + in_hobby3.checked + in_hobby4.checked +in_hobby5.checked;
-        var in_post1 = document.getElementById("post1");
-        var in_post2 = document.getElementById("post2");
-        var in_address = document.getElementById("address");
-        
-        if(in_id.value == ""){
+
+        if($('#id').val() == ""){
             alert("아이디를 입력하지 않았습니다.");
-            in_id.focus();
+            $('#id').focus();
             return false;
-        } else if(in_pw.value == ""){
+        } else if($('#pass').val() == ""){
             alert("비밀번호를 입력하지 않았습니다.")
-            in_pw.focus();
+            $('#pass').focus();
             return false;
-        } else if(in_jumin1.value.length < 6 || in_jumin2.value.length < 7){
+        } else if($('#jumin1').val().length < 6 || $('#jumin2').val().length < 7){
             alert("주민번호를 제대로 입력하지 않았습니다.")
-            in_jumin1.focus();
+            $('#jumin1').focus();
             return false;
-        } else if(in_email.value == "" || in_domain.value == ""){
+        } else if($('#email').val() == "" || $('#domain').val() == ""){
             alert("이메일을 입력하지 않았습니다.")
-            in_email.focus()
+            $('#email').focus();
             return false;
-        } else if(in_email.value == ""){
-            alert("이메일을 입력하지 않았습니다.")
-            in_email.focus();
-            return false;
-        } else if(!in_gender1.checked && !in_gender2.checked){
+        } else if(!$('input[name="gender"]:checked').length){
             alert("성별이 선택되지 않았습니다.")
-            in_gender1.focus();
+            $('#gender1').focus();
             return false;
-        } else if(hobbyCount < 2){
+        } else if($('input[name="hobby"]:checked').length < 2){
             alert("2개 이상의 취미를 선택해주세요.")
             in_hobby1.focus();
             return false;
-        } else if(in_post1.value.length < 3 || in_post2.value.length < 3){
+        } else if($('#post1').val().length < 3 || $('#post2').val().length < 3){
             alert("우편번호가 입력되지 않았습니다.")
-            in_post1.focus();
+            $('#post1').focus();
             return false;
-        } else if(in_address.value == ""){
+        } else if($('#address').val() == ""){
             alert("주소를 입력하지 않았습니다.")
-            in_address.focus();
+            $('#address').focus();
             return false;
         }
     }
 
     function idCheck(){
-        var in_id = document.getElementById("id");
-        if(in_id.value == ""){
+        if($('#id').val() == ""){
             alert("ID를 입력해주세요");
-            in_id.focus();
+            $('#id').focus();
         } else {
             window.open("idcheck.html", "_blank", "width=300, height=250");
         }
     }
 
     function move(){
-        var jumin1 = document.getElementById("jumin1");
+        var jumin1 = $('#jumin1');
         if(jumin1.value.length == 6){
-            if(!isNaN(Number(jumin1.value))){
-                document.getElementById("jumin2").focus();
+            if(!isNaN(Number(jumin1.val()))){
+                $('#jumin2').focus();
             } else {
                 alert("숫자가 아닌 값이 있습니다.")
-                jumin1.value = "";
+                jumin1.val() = "";
                 jumin1.focus();
             }
         }
     }
     function move2(){
-        var jumin2 = document.getElementById("jumin2");
+        var jumin2 = $('#jumin2');
         console.log(jumin2);
-        if(jumin2.value.length == 7){
-            if(isNaN(Number(jumin2.value))){
+        if(jumin2.val().length == 7){
+            if(isNaN(Number(jumin2.val()))){
                 alert("숫자가 아닌 값이 있습니다.")
-                jumin2.value = "";
+                jumin2.val() = "";
                 jumin2.focus();
             }
         }
     }
 
     function domain1(e){
-        var domain = document.getElementById("domain")
+        var domain = $('#domain');
         if (e.target.value == "") {
-            domain.value = "";
-            domain.readOnly = false;
+            domain.val("");
+            domain.attr("readonly", false);
         } else{
-            domain.value = e.target.value;
-            domain.readOnly = true;
+            domain.val(e.target.value);
+            domain.attr("readonly", true);
         }
     }
 

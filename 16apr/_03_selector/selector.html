@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>선택자1</title>
+    <script src="../../lib/jquery-3.3.1.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("div>ul>li+li").css("color", "red");
+        })
+    </script>
+</head>
+<body>
+    <div>
+        <ul>
+            <li>Cat</li>
+            <li>Dog</li>
+            <li>Elephant</li>
+        </ul>
+    </div>
+    <div>
+        <p>여긴 적용이 안되요!</p>
+    </div>
+</body>
+</html>

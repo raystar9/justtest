@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>입력받기</title>
+    <script src="../../lib/jquery-3.3.1.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            var name = prompt("이름을 입력하세요.");
+            $('#name')
+                .css('color', 'green')
+                .css('background-color', 'orange')
+                .css('font-size', '50px')
+                .css('border', '5px solid grey')
+                .val(name);
+        })
+    </script>
+</head>
+<body>
+    <input type="text" name="name" id="name">
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>꿈틀이</title>
+    <script src="../../lib/jquery-3.3.1.min.js"></script>
+    <script>
+        $(document).ready(()=>{
+            $('ul')
+                .css('list-style-type', 'none')
+                .css('display', 'table')
+                .css('width', 'inherit');
+                
+            $('li')
+                .css('display', 'table-cell')
+                .css('width', '100px')
+                .css('height', '70px')
+                .css('margin', '0px')
+                .css('vertical-align', 'middle')
+                .css('text-align', 'center');
+            $('li:first-child').css('border-radius', '15px 0px 0px 15px');
+            $('li:last-child').css('border-radius', '0px 15px 15px 0px');
+            $('li:nth-child(2n+1)').css('background', 'brown');
+            $('li:nth-child(2n)').css('background', 'red');
+        })
+        
+    </script>
+    <style>
+        /* a{clear:left;} */
+    </style>
+</head>
+<body>
+    <ul>
+        <li>First</li>
+        <li>Second</li>
+        <li>Third</li>
+        <li>Fourth</li>
+        <li>Fifth</li>
+        <li>Sixth</li>
+        <li>Seventh</li>
+    </ul>
+    <p>꿈틀이입니다.</p>
+</body>
+</html>
