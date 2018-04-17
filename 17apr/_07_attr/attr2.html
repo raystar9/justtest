@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>title Here</title>
+    <script src="../../lib/jquery-3.3.1.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('img').each((index, item)=>{
+                $(item).attr('width', 100*(index+1));
+            })
+        });
+    </script>
+</head>
+<body>
+    <img src= "../../fire.jpeg">
+    <img src="../../star.png">
+    <img src="../../earth.jpeg">
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>선택자</title>
+    <style>
+        h3.normal {}
+    </style>
+    <script src="../../lib/jquery-3.3.1.min.js"></script>
+    <script>
+        var xml = '';
+        xml += "<friends>";
+        xml += "    <friend>";
+        xml += "        <name>오바마</name>";
+        xml += "        <language>영어</language>";
+        xml += "    </friend>";
+        xml += "    <friend>";
+        xml += "        <name>하니</name>";
+        xml += "        <language>중국어</language>";
+        xml += "    </friend>";
+        xml += "    <friend>";
+        xml += "        <name>세종대왕</name>";
+        xml += "        <language>한국어</language>";
+        xml += "    </friend>";
+        xml += "</friends>";
+
+        $(document).ready(() => {
+            var xmlDoc = $.parseXML(xml);
+            $(xmlDoc).find('friend').each(function(index, item){
+                var str = '';
+                str += '<p>';
+                str += "친구 " + (index + 1);
+                str += '</p>';
+                str += '<h2>'
+                str += $(this).find('name').text();
+                str += '</h2>';
+                str += '<p>';
+                str += $(this).find('language').text();
+                str += '</p>';
+                str += '<hr>'
+                document.write(str);
+            });
+        });
+    </script>
+</head>
+<body>
+</body>
+</html>

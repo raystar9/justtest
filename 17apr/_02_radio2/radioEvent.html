@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>버튼클릭</title>
+    <script src="../../lib/jquery-3.3.1.min.js"></script>
+    <script>
+        $(document).ready(()=>{
+            for(let i = 0; i < $('input:radio').length; i++){
+                $('input:radio:nth-child('+(i+1)+')').on('click', ()=>{
+                    $('#container').attr('src', $('input:radio:nth-child('+(i+1)+')').val())
+                });
+            }
+        });
+    </script>
+</head>
+<body>
+    <h1>ㅎㅇ</h1>
+    <div>radio 버튼을 클릭하면 이미지가 바뀝니다.</div>
+    <div>
+        <input type="radio" name="icon" id="" value="../../image1.png">image1
+        <input type="radio" name="icon" id="" value="../../image2.png">image2
+        <input type="radio" name="icon" id="" value="../../image3.png">image3
+    </div>
+    <img src="../../image1.png" id="container">
+</body>
+</html>
