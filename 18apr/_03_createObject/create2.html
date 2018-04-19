@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>생성</title>
+    <script src="../../lib/jquery-3.3.1.min.js"></script>
+    <script>
+        $(document).ready(() => {
+            $('<img>', {
+                'src':'../../image1.png',
+                'width':'200px'
+            })
+                .appendTo('body')
+                .click(function () { 
+                    alert("나는 샵입니다.")
+                });
+            $('<img>')
+                .attr({'src': '../../image2.png'})
+                .css('width', '200px')
+                .appendTo('body')
+                .on('click', function (){
+                    alert("나는 음표입니다.");
+                });
+                
+        })
+    </script>
+</head>
+<body>
+</body>
+</html>

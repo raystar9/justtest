@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>글자수</title>
+    <script src="../../lib/jquery-3.3.1.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('#ta').keyup(function () {
+                console.log($(this).val().length);
+                
+                $('#count').html($(this).val().length + ' / 150자');
+            });
+        });
+    </script>
+</head>
+<body>
+    <p>150자 내로 작성하시오.</p>
+    <textarea name="" id="ta" cols="30" rows="10" maxlength="150"></textarea>
+    <p id="count">0 / 150자</p>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>2초마다 이미지 이동하기</title>
+    <script src="../../lib/jquery-3.3.1.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            setInterval(() => {
+                $('img').last().after($('img').first());
+            }, 2000);
+        });
+    </script>
+    <style>
+        img {width: 200px; height: 200px; margin:0px 15px 0px 15px}
+    </style>
+</head>
+<body>
+    <img src="../../earth.jpeg" alt="">
+    <img src="../../fire.jpeg" alt="">
+    <img src="../../image1.png" alt="">
+    <img src="../../image2.png" alt="">
+    <img src="../../image3.png" alt="">
+</body>
+</html>

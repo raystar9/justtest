@@ -26,14 +26,15 @@
                 //bookList에서 object를 받아와 그 수만큼 row를 생성, 첫 컬럼에 name, 두번째 컬럼에 price,
                 //세번째 컬럼에 input.quantity, 네번째 컬럼에 input.totalPrice를 넣어준다.
                 $('#order-format>tbody').append(
-                    $('<tr></tr>')
-                        .append($("<td></td>").html(bookList[i].name))
-                        .append($('<td class="price"></td>').html(bookList[i].price))
-                        .append($("<td></td>")
-                            .append($('<input type="number" class="quantity" value="0" min="0" onchange="calcSum()">'))
-                        ).append($("<td></td>")
+                    $('<tr></tr>').append(
+                        $("<td></td>").html(bookList[i].name), 
+                        $('<td class="price"></td>').html(bookList[i].price), 
+                        $("<td></td>")
+                            .append($('<input type="number" class="quantity" value="0" min="0" onchange="calcSum()">')),
+                        $("<td></td>")
                             .append($('<input type="number" class="totalPrice" readonly>'))
-                        )
+                        
+                    )
                 );
             }
         })

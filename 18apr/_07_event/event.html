@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>이벤트</title>
+    <script src="../../lib/jquery-3.3.1.min.js"></script>
+    <script>
+        var shape = ["◆", "♠", "§"]
+
+        $(document).ready(function () {
+            $('h1').on('click', function () {
+                $(this).html((index, html) => {
+                    var i = $('h1').index(this);
+                    return html + shape[i];
+                });
+            });
+        });
+    </script>
+</head>
+<body>
+    <div></div>
+    <h1>Header(0)</h1>
+    <h1>Header(1)</h1>
+    <h1>Header(2)</h1>
+</body>
+</html>

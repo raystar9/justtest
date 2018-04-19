@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>h1생성</title>
+    <script src="../../lib/jquery-3.3.1.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('#wrap').on('click', 'h1', function (e) { 
+                var length = $('h1').length;
+                var targetHTML = $(this).html();
+
+                $('#wrap').append('<h1>' + length + ' - ' + targetHTML + '</h1>');
+            });
+        });
+    </script>
+</head>
+<body>
+    <div id="wrap">
+        <h1>Header1</h1>
+    </div>
+</body>
+</html>

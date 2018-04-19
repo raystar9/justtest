@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>이벤트 전달</title>
+    <script src="../../lib/jquery-3.3.1.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('a').click(function (e) { 
+                // e.preventDefault();
+                // e.stopPropagation();
+                $(this).css('background-color', 'blue');
+                return false;
+            });
+
+            $('h1').click(function (e) {
+                // e.preventDefault();
+                // e.stopPropagation();
+                $(this).css('background-color', 'red');
+                return false;
+            });
+        });
+    </script>
+</head>
+<body>
+    <h1><a href="http://www.naver.com">네이버로 연결</a></h1>
+</body>
+</html>

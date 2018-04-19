@@ -1,0 +1,22 @@
+{
+  "name": "javascript-workspace",
+  "version": "0.0.1",
+  "description": "javascript practice",
+  "main": "index.js",
+  "scripts": {
+    "test": "yeah"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/raystar9/justtest.git"
+  },
+  "author": "raystar",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/raystar9/justtest/issues"
+  },
+  "homepage": "https://github.com/raystar9/justtest#readme",
+  "dependencies": {
+    "@types/jquery": "^3.3.1"
+  }
+}

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>visibility</title>
+    <style>
+        span {visibility: hidden; color: blue;}
+    </style>
+    <script src="../../lib/jquery-3.3.1.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            
+            $('button').click(function (e) { 
+                var span = $('span');
+                if(span.css('visibility') == 'hidden'){
+                    span.css('visibility', 'visible');
+                } else {
+                    span.css('visibility', 'hidden');
+                }
+                
+            });
+        });
+    </script>
+</head>
+<body>
+    <h1>다음 빈 곳에 숨은 단어?<button>show/hide</button></h1>
+    <hr>
+    <ul>
+        <li>HTML is HyperText (<span>Markup</span>) Language</li>
+        <li>CSS is Cascading (<span>Style</span>) Sheet</li>
+    </ul>
+</body>
+</html>
