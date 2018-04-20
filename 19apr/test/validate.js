@@ -1,4 +1,5 @@
 $(document).ready(function () {
+    console.log(document.URL.substring(document.URL.lastIndexOf("/") + 1, document.URL.indexOf(".")));
     $('#myForm').submit(function (e) { 
         if($('#id').val() == ""){
             alert("아이디를 입력하지 않았습니다.");
@@ -69,12 +70,14 @@ $(document).ready(function () {
     });
 
     $('#sel').change(function (e) { 
+        console.log($('#sel').val());
+        
         var domain = $('#domain');
-        if (e.target.value == "") {
+        if ($('#sel').val() == "") {
             domain.val("");
             domain.attr("readonly", false);
         } else{
-            domain.val(e.target.value);
+            domain.val($('#sel').val());
             domain.attr("readonly", true);
         }
     });
